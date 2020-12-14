@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <title>Portfólio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="../favicon.ico" type="image/ico" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap");
+      body {
+        background-color: white;
+        font-family: "Rubik", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      section {
+        height: 95vh;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+      @media (min-width: 45em) {
+        section {
+          flex-wrap: nowrap;
+        }
+      }
+      .card {
+        position: relative;
+        width: 250px;
+        height: 250px;
+        margin: 10px;
+        background: #ccc;
+        transform: rotateX(0) rotateY(0);
+        transform-style: preserve-3d;
+        transition-duration: 0.1s;
+        transition-timing-function: ease !important;
+        backface-visibility: hidden;
+        will-change: tranform;
+      }
+      .card__overlay {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: url(card.webp) no-repeat center center;
+        background-size: cover;
+        mix-blend-mode: lighten;
+        opacity: 0.5;
+      }
+      .card__image img {
+        max-width: 100%;
+        height: auto;
+        mix-blend-mode: lighten;
+      }
+      .card__heading {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        width: 100%;
+        color: rgb(255, 255, 255);
+      }
+      .card__heading .small {
+        display: inline-block;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+        font-size: 10px;
+        transform: translateZ(15px);
+      }
+      .card__heading h2 {
+        margin: 0;
+        transform: translateZ(30px);
+      }
+      .card.rounded,
+      .card.rounded .card__overlay {
+        border-radius: 8px;
+      }
+      .card.is-out {
+        transform: rotateX(0) rotateY(0) !important;
+        transition-duration: 1s;
+      }
+      #dribbble {
+        background-color: #dd3a79;
+      }
+      #behance {
+        background-color: #0059f8;
+      }
+      #github {
+        background-color: #0d2636;
+      }
+      #meiajuda {
+        background-color: #1B7E75;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <a href="https://dribbble.com/frontedu" target="_blank" id="dribbble" class="card rounded">
+        <div class="card__overlay"></div>
+
+        <div class="card__heading">
+          <span class="small">Interface</span>
+          <h2>Dribbble</h2>
+        </div>
+      </a>
+      <a href="https://behance.net/frontedu" target="_blank" id="behance" class="card rounded">
+        <div class="card__overlay"></div>
+        <div class="card__heading">
+          <span class="small">User Experience</span>
+          <h2>Behance</h2>
+        </div>
+      </a>
+      <a href="https://github.com/frontedu" target="_blank" id="github" class="card rounded">
+        <div class="card__overlay"></div>
+        <div class="card__heading">
+          <span class="small">Front-end</span>
+          <h2>Github</h2>
+        </div>
+      </a>
+      <a href="https://meiajuda.me" target="_blank" id="meiajuda" class="card rounded">
+        <div class="card__overlay"></div>
+        <div class="card__heading">
+          <span class="small">Hackaton</span>
+          <h2>MeiAjuda</h2>
+        </div>
+      </a>
+    </section>
+    <script src="jquery.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
